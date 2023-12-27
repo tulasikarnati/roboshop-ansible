@@ -1,0 +1,14 @@
+- name: catalogue
+  hosts: catalogue
+  become: yes
+  tasks:
+    - name: Remove the nodejs package
+      ansible.builtin.package:
+        name: nodejs
+        state: absent
+
+    - name: install nodejs 18
+      ansible.builtin.package:
+        name: nodejs-18
+        state: present
+        enabled: yes

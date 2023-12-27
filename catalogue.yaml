@@ -6,15 +6,9 @@
       ansible.builtin.package:
         name: nodejs
         state: absent
-    
-    - name: enable nodejs-18
-      ansible.builtin.service:
-        name: nodejs-18
-        enabled: yes
 
-    - name: Install nodejs
-      ansible.builtin.package:
-        name: nodejs
+    name: Install 18 version of nodejs
+      ansible.builtin.yum:
+        name: nodejs-18
         state: present
-    
     

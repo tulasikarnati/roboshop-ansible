@@ -8,7 +8,6 @@
         state: absent
 
     - name: Install 18 version of nodejs
-      ansible.builtin.yum:
-        name: nodejs= "{{ 18 }}"
-        state: present
+      ansible.builtin.command: dnf module enable nodejs:18 -y
+      
     
